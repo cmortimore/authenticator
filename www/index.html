@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+		<script src="phonegap.js"></script>
+		<script src="barcodescanner.js"></script>
+		
+		<script>
+		
+		
+		function scanCode() {
+		    window.plugins.barcodeScanner.scan(
+		        function(result) {
+		        alert("Scanned Code: " + result.text 
+		                + ". Format: " + result.format
+		                + ". Cancelled: " + result.cancelled);
+		    }, function(error) {
+		        alert("Scan failed: " + error);
+		    });
+		}
+
+		</script>
+	</head>
+    <body>
+	
+	    <a href="#" class="btn" onclick="scanCode();">Scan Code</a>
+	
+    </body>
+</html>
